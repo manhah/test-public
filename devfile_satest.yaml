@@ -4,15 +4,12 @@ metadata:
 components:
   - name: tools
     container:
-      image: quay.io/manhah/test-s1:latest
+      image: registry.redhat.io/devspaces/udi-rhel8:3.8
       mountSources: true
       memoryLimit: 4Gi
-commands:
-  - id: build
-    exec:
-      component: tools
-      workingDir: ${PROJECTS_ROOT}/xxx-api
-      commandLine: mvn clean install
-      group:
-        kind: build
-        isDefault: true
+      volumeMounts:
+        - name: m2
+          path: /home/user/.m2
+  - name: m2
+    volume:
+      size: 1G
