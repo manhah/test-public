@@ -1,16 +1,18 @@
 schemaVersion: 2.2.0
 metadata:
-  name: test-workspace-cpu-only
+  name: udi-python311
 attributes:
   controller.devfile.io/storage-type: ephemeral
-  pod-overrides:
-    spec:
-      nodeSelector:
-        cpu-only: '1'
 components:
-- name: test-container-cpu-only
+- name: udi
   container:
     image: quay.io/devfile/universal-developer-image:ubi8-latest
+    memoryLimit: 4Gi
+    mountSources: true
+    sourceMapping: /projects
+- name: python311
+  container:
+    image: registry.access.redhat.com/ubi9/python-311:1-24.1697647154
     memoryLimit: 4Gi
     mountSources: true
     sourceMapping: /projects
