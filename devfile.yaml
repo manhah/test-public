@@ -6,7 +6,7 @@ attributes:
   pod-overrides:
     spec:
       nodeSelector:
-        cpu-only: 1
+        cpu-only: "1"
 components:
 - name: test-container-gpu
   attributes:
