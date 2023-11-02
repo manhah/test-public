@@ -16,3 +16,5 @@ components:
     memoryLimit: 4Gi
     mountSources: true
     sourceMapping: /projects
+    command: ['tail']
+    args: ['-f', '/dev/null']
