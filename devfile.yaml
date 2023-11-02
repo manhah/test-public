@@ -1,26 +1,16 @@
 schemaVersion: 2.2.0
 metadata:
-  name: test-workspace-gpu
+  name: test-workspace-cpu-only
 attributes:
   controller.devfile.io/storage-type: ephemeral
   pod-overrides:
     spec:
       nodeSelector:
-        cpu-only: "2"
+        cpu-only: "1"
 components:
-- name: test-container-gpu
-  attributes:
-    container-overrides:
-      resources:
-        limits:
-          memory: 0Gi
-          nvidia.com/gpu: 0 # limiting to 1 GPU
-        requests:
-          memory: 0Gi
-          nvidia.com/gpu: 0 # requesting 1 GPU
+- name: test-container-cpu-only
   container:
-    image: nvidia/samples:vectoradd-cuda11.6.0-ubi8
+    image: quay.io/devfile/universal-developer-image:ubi8-latest
+    memoryLimit: 4Gi
     mountSources: true
     sourceMapping: /projects
-    command: ['tail']
-    args: ['-f', '/dev/null']
