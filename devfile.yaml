@@ -8,11 +8,24 @@ components:
   container:
     image: quay.io/devfile/universal-developer-image:ubi8-latest
     memoryLimit: 4Gi
+    memoryRequest: 2Gi
+    cpuLimit: 4
+    cpuRequest: 1
     mountSources: true
     sourceMapping: /projects
 - name: ollama
+  attributes:
+    container-overrides:
+      resources:
+        limits:
+          cpu: 16
+          memory: 24Gi
+          nvidia.com/gpu: 1 # limiting to 1 GPU
+        requests:
+          cpu: 4
+          memory: 16Gi
+          nvidia.com/gpu: 1 # requesting 1 GPU
   container:
     image: docker.io/ollama/ollama:latest
-    memoryLimit: 16Gi
     mountSources: true
     sourceMapping: /.ollama
