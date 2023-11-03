@@ -1,6 +1,6 @@
 schemaVersion: 2.2.0
 metadata:
-  name: udi-python311
+  name: udi-ollama
 attributes:
   controller.devfile.io/storage-type: ephemeral
 components:
@@ -10,11 +10,13 @@ components:
     memoryLimit: 4Gi
     mountSources: true
     sourceMapping: /projects
-- name: python311
+- name: ollama
   container:
-    image: registry.access.redhat.com/ubi9/python-311:1-24.1697647154
-    memoryLimit: 4Gi
+    image: docker.io/ollama/ollama:latest
+    memoryLimit: 16Gi
     mountSources: true
-    sourceMapping: /projects
-    command: ['tail']
-    args: ['-f', '/dev/null']
+    sourceMapping: /.ollama
+    ports:
+    - containerPort: 11434
+      name: frontend
+      protocol: TCP
