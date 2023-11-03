@@ -9,8 +9,8 @@ components:
     image: quay.io/devfile/universal-developer-image:ubi8-latest
     memoryLimit: 4Gi
     memoryRequest: 2Gi
-    cpuLimit: 4
-    cpuRequest: 1
+    cpuLimit: 4000m
+    cpuRequest: 1000m
     mountSources: true
     sourceMapping: /projects
 - name: ollama
@@ -18,11 +18,11 @@ components:
     container-overrides:
       resources:
         limits:
-          cpu: 16
+          cpu: 16000m
           memory: 24Gi
           nvidia.com/gpu: 1 # limiting to 1 GPU
         requests:
-          cpu: 4
+          cpu: 4000m
           memory: 16Gi
           nvidia.com/gpu: 1 # requesting 1 GPU
   container:
