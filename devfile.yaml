@@ -16,7 +16,3 @@ components:
     memoryLimit: 16Gi
     mountSources: true
     sourceMapping: /.ollama
-    ports:
-    - containerPort: 11434
-      name: frontend
-      protocol: TCP
