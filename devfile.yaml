@@ -33,7 +33,7 @@ commands:
   - exec:
       name: "pullModel"
       component: "udi"
-      commandLine: "curl -X POST http://ollama:11434/api/pull -d '{"name": "codellama:13b"}'"
+      commandLine: "curl -X POST http://ollama:11434/api/pull -d '{\"name\": \"codellama:13b\"}'"
 events:
   postStart:
     - "pullModel"
