@@ -33,7 +33,7 @@ commands:
   - id: pullmodel
     exec:
       component: udi
-      commandLine: "curl -X POST http://localhost:11434/api/pull -d '{\"name\": \"codellama:13b\"}'"
+      commandLine: "sleep 60 & curl -X POST http://localhost:11434/api/pull -d '{\"name\": \"codellama:13b\"}'"
 events:
   postStart:
     - pullmodel
