@@ -30,10 +30,10 @@ components:
     mountSources: true
     sourceMapping: /.ollama
 commands:
-  - id: pullModel
+  - id: pullmodel
     exec:
       component: udi
       commandLine: "curl -X POST http://ollama:11434/api/pull -d '{\"name\": \"codellama:13b\"}'"
 events:
   postStart:
-    - pullModel
+    - pullmodel
