@@ -1,6 +1,6 @@
 schemaVersion: 2.2.0
 metadata:
-  name: udi-ollama-1
+  name: udi-ollama
 attributes:
   controller.devfile.io/storage-type: ephemeral
 components:
