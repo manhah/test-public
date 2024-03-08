@@ -21,11 +21,11 @@
       "model": "codellama-70b"
     },
     {
-      "title": "CodeLlama-13b",
+      "title": "On-prem CodeLlama-13b",
       "model": "codellama:13b",
       "apiBase": "http://localhost:11434",
       "provider": "ollama"
-      }  
+      }    
   ],
   "slashCommands": [
     {
@@ -83,7 +83,7 @@
     "provider": "ollama",
     "model": "starcoder-3b"
   },
-  "allowAnonymousTelemetry": true,
+  "allowAnonymousTelemetry": false,
   "embeddingsProvider": {
     "provider": "transformers.js"
   }
