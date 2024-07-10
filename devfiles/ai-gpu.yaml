@@ -12,15 +12,15 @@ projects:
     name: dev-demos
 components:
   - name: python
-#    attributes:
-#      container-overrides:
-#        resources:
-#          limits:
-#            memory: 4Gi
-#            nvidia.com/gpu: 1 # limiting to 1 GPU
-#          requests:
-#            memory: 2Gi
-#            nvidia.com/gpu: 1 # requesting 1 GPU
+    attributes:
+      container-overrides:
+        resources:
+          limits:
+            memory: 4Gi
+            nvidia.com/gpu: 1 # limiting to 1 GPU
+          requests:
+            memory: 2Gi
+            nvidia.com/gpu: 1 # requesting 1 GPU
     container:
       image: quay.io/manhah/license_plate_demo_gpu:latest
       memoryLimit: 4Gi
